@@ -51,7 +51,7 @@
           <p class="description">Centro de Saúde, Performance e Longevidade.</p>
           <div class="actions">
             <a class="button" target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=5583996840451"><svg><use href="#whatsapp"/></svg> Falar no WhatsApp <svg class="out"><use href="#arrow"/></svg></a>
-            <a class="button button-route" href="#localizacao"><svg><use href="#pin"/></svg> Como chegar</a>
+            <a class="button button-route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.+Manoel+Morais%2C+791%2C+Mana%C3%ADra%2C+Jo%C3%A3o+Pessoa%2C+PB"><svg><use href="#pin"/></svg> Como chegar</a>
           </div>
         </div>
       </div>
@@ -67,15 +67,24 @@
       <div class="wrap"><div class="visit-info">
         <p class="kicker">Visite a WeFitness</p>
         <h2 id="visite">Nos vemos no treino<span>.</span></h2>
-        <p class="intro">Consulte os horários pelo WhatsApp ou escolha seu aplicativo de navegação para encontrar o CT.</p>        <address>
+        <p class="intro">Fale com a equipe pelo WhatsApp para consultar os horários e combinar sua visita.</p>
+        <address>
           <svg><use href="#pin"/></svg>
-          <div><h3>Onde estamos</h3><p>Avenida Guarabira, 1272<br>Manaíra, João Pessoa – PB</p>
-          <a class="detail-link" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=Avenida+Guarabira%2C+1272%2C+Mana%C3%ADra%2C+Jo%C3%A3o+Pessoa%2C+PB">Google Maps <svg><use href="#arrow"/></svg></a> <a class="detail-link" target="_blank" rel="noopener noreferrer" href="https://www.waze.com/ul?q=Avenida%20Guarabira%201272%2C%20Mana%C3%ADra%2C%20Jo%C3%A3o%20Pessoa%2C%20PB&amp;navigate=yes">Waze <svg><use href="#arrow"/></svg></a></div>
+          <div><h3>Onde estamos</h3><p>Av. Manoel Morais, 791<br>Manaíra, João Pessoa – PB</p>
+          </div>
         </address>
         <a class="contact-row" target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=5583996840451"><svg><use href="#whatsapp"/></svg><span>WhatsApp da equipe<strong>(83) 99684-0451</strong></span><svg class="out"><use href="#arrow"/></svg></a>
       </div></div>
     </section>
   </main>
   <footer><div class="wrap footer-inner"><img src="assets/wefitness.svg" width="48" height="40" alt="WeFitness"><a href="https://www.instagram.com/wefitnessct/"><svg><use href="#instagram"/></svg>@wefitnessct <svg class="out"><use href="#arrow"/></svg></a></div></footer>
+  <dialog id="map-picker" aria-labelledby="map-title">
+    <form method="dialog"><button aria-label="Fechar">×</button></form>
+    <h3 id="map-title">Abrir rota com</h3>
+    <a data-map="apple">Mapas da Apple</a>
+    <a data-map="google">Google Maps</a>
+    <a data-map="waze">Waze</a>
+  </dialog>
+  <script src="rotas.js"></script>
 </body>
 </html>

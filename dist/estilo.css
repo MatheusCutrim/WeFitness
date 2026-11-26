@@ -26,7 +26,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 4;
-  background: rgba(23,24,22,.84);
+  background: rgba(8,9,8,.93);
   border-bottom: 1px solid rgba(255,255,255,.17);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -56,7 +56,7 @@ h1 em { color: var(--orange); font-weight: 800 }
 .description { color: #d2d1c9; margin-top: .2rem; font-size: 1.05rem }
 .actions { gap: clamp(16px, 2vw, 32px); margin-top: 2rem; flex-wrap: wrap }
 .button, .underlink, .detail-link, .contact-row, footer a { font-weight: 600 }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 11px; padding: 0 19px; min-height: 53px; background: var(--orange); color: #151613; border-radius: 5px; transition: background .2s, transform .2s }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 11px; padding: 0 19px; min-height: 47px; background: var(--orange); color: #151613; border-radius: 12px; transition: background .2s, transform .2s }
 .button:hover { background: #ff8b54; transform: translateY(-2px) }
 .button-route { color: white; background: #111210; border: 1px solid #797975 }
 .button-route:hover { background: #282925 }
@@ -111,8 +111,8 @@ footer a svg:first-child { width: 18px; height: 18px }
   h1 { font-size: clamp(2.6rem, 13.4vw, 5.6rem); margin-block: .85rem .8rem }
   .description { font-size: 1rem }
   .hero-copy { width: 100% }
-  .actions { display: grid; grid-template-columns: 1fr; margin-top: 18px; gap: 8px }
-  .button { min-height: 48px; padding-inline: 14px; gap: 7px }
+  .actions { display: grid; width: fit-content; max-width: 100%; grid-template-columns: 1fr; margin-top: 18px; gap: 8px }
+  .button { min-height: 44px; padding-inline: 14px; gap: 7px }
   .button .out { margin-left: 2px }
   .underlink { font-size: .95rem }
   .visit { grid-template-columns: 1fr; gap: 30px; padding-block: 42px }
@@ -132,19 +132,28 @@ footer a svg:first-child { width: 18px; height: 18px }
 }
 
 .story, .arrival { position: relative; isolation: isolate; }
-.story::before, .arrival::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.story::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
 .story { padding-block: clamp(66px, 9vw, 145px); background: var(--paper); }
-.story::before { background: linear-gradient(90deg,#faf9f6 5%,rgba(250,249,246,.87) 44%,rgba(250,249,246,.55)),url(assets/ct-1195.webp) center 47% / cover; }
+.story::before { background: linear-gradient(90deg,#faf9f6 5%,rgba(250,249,246,.87) 44%,rgba(250,249,246,.55)),url(assets/ct-1194.webp) right 15% / max(49%, 430px) auto no-repeat; }
 .story h2 em { color: #ab3d10; }
 .story p:last-child { max-width: 42ch; font-size: 1.16rem; }
 .arrival { color: white; background: var(--ink); padding-block: clamp(58px,7vw,110px) clamp(95px,10vw,160px); }
-.arrival::before { background: linear-gradient(to top,var(--ink),transparent 46%),linear-gradient(90deg,#171816 12%,rgba(23,24,22,.94) 44%,rgba(23,24,22,.24)),url(assets/ct-1194.webp) right top / 54% auto no-repeat; }
+
 .arrival .visit-info { max-width: 470px; }
 .arrival .intro,.arrival address p,.arrival .contact-row span { color: #e9e6df; }
 .arrival .contact-row strong { color: white; }
 .arrival .detail-link { color: var(--orange); margin-right: 20px; }
 .arrival address,.arrival .contact-row { border-color: #777873; }
 @media(max-width:700px) {
-  .arrival { --photo-height: clamp(220px, 63vw, 360px); padding-bottom: calc(var(--photo-height) + 25px); }
-  .arrival::before { top: auto; height: var(--photo-height); background: linear-gradient(to bottom,var(--ink),transparent 18%,transparent 75%,var(--ink)),url(assets/ct-1194.webp) center 14% / cover no-repeat; }
+  .arrival { padding-block: 54px; }
+  .story { padding-top: clamp(160px, 48vw, 300px); }
+  .story::before { background: linear-gradient(to bottom,rgba(250,249,246,.55),rgba(250,249,246,.62) 24%,var(--paper) 60%),url(assets/ct-1194.webp) center top 7% / 100% auto no-repeat; }
+
 }
+#map-picker { width: min(90vw, 340px); padding: 22px; border: 1px solid #4d4e49; border-radius: 16px; background: var(--ink); color: white; }
+#map-picker::backdrop { background: rgb(0 0 0 / .58); }
+#map-picker h3 { margin-bottom: 12px; }
+#map-picker form { float: right; }
+#map-picker button { background: transparent; border: 0; color: white; font-size: 24px; cursor: pointer; min-width: 44px; }
+#map-picker a { display: block; padding: 12px; border-top: 1px solid #51534d; }
+#map-picker [hidden] { display: none; }
