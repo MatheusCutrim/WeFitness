@@ -132,8 +132,8 @@ footer a svg:first-child { width: 18px; height: 18px }
 }
 
 .story, .arrival { position: relative; isolation: isolate; }
-.story::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
-.story { padding-block: clamp(66px, 9vw, 145px); background: var(--paper); }
+.story::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; filter: blur(2px); }
+.story { padding-block: clamp(66px, 9vw, 145px); background: var(--paper); overflow: clip; }
 .story::before { background: linear-gradient(90deg,#faf9f6 5%,rgba(250,249,246,.87) 44%,rgba(250,249,246,.60)),url(assets/ct-1194.webp) right 18% / max(49%, 430px) auto no-repeat; }
 .story h2 em { color: #ab3d10; }
 .story p:last-child { max-width: 42ch; font-size: 1.16rem; }
