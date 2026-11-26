@@ -132,9 +132,16 @@ footer a svg:first-child { width: 18px; height: 18px }
 }
 
 .story, .arrival { position: relative; isolation: isolate; }
-.story::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; filter: blur(2px); }
+.story::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 37%;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--paper), rgb(250 249 246 / .64) 20%, rgb(250 249 246 / .51) 42%),
+    url(assets/treino-wefitness.webp) center 42% / cover no-repeat;
+}
 .story { padding-block: clamp(66px, 9vw, 145px); background: var(--paper); overflow: clip; }
-.story::before { background: linear-gradient(90deg,#faf9f6 5%,rgba(250,249,246,.87) 44%,rgba(250,249,246,.60)),url(assets/ct-1194.webp) right 18% / max(49%, 430px) auto no-repeat; }
 .story h2 em { color: #ab3d10; }
 .story p:last-child { max-width: 42ch; font-size: 1.16rem; }
 .arrival { color: white; background: var(--ink); padding-block: clamp(58px,7vw,110px) clamp(95px,10vw,160px); }
@@ -146,8 +153,13 @@ footer a svg:first-child { width: 18px; height: 18px }
 .arrival address,.arrival .contact-row { border-color: #777873; }
 @media(max-width:700px) {
   .arrival { padding-block: 54px; }
-  .story { padding-top: clamp(160px, 48vw, 300px); }
-  .story::before { background: linear-gradient(to bottom,rgba(250,249,246,.60),rgba(250,249,246,.62) 24%,var(--paper) 60%),url(assets/ct-1194.webp) center calc(7% - 12px) / 100% auto no-repeat; }
+  .story { padding-top: 49vw; }
+  .story::before {
+    inset: 0 0 auto;
+    aspect-ratio: 597 / 388;
+    background: linear-gradient(to bottom, rgb(250 249 246 / .47) 44%, var(--paper)),
+      url(assets/treino-wefitness.webp) center / cover no-repeat;
+  }
 
 }
 #map-picker { width: min(90vw, 340px); padding: 22px; border: 1px solid #4d4e49; border-radius: 16px; background: var(--ink); color: white; }
