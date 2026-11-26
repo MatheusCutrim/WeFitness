@@ -118,3 +118,21 @@ footer a svg:first-child { width: 18px; height: 18px }
   html { scroll-behavior: auto }
   *, *::before, *::after { animation: none !important; transition: none !important }
 }
+
+.story, .arrival { position: relative; isolation: isolate; }
+.story::before, .arrival::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.story { padding-block: clamp(66px, 9vw, 145px); background: var(--paper); }
+.story::before { background: linear-gradient(90deg,#faf9f6 5%,rgba(250,249,246,.87) 44%,rgba(250,249,246,.55)),url(assets/ct-1195.webp) center 47% / cover; }
+.story h2 em { color: #ab3d10; }
+.story p:last-child { max-width: 42ch; font-size: 1.16rem; }
+.arrival { color: white; background: var(--ink); padding-block: clamp(58px,7vw,110px) clamp(95px,10vw,160px); }
+.arrival::before { background: linear-gradient(to top,var(--ink),transparent 46%),linear-gradient(90deg,#171816 12%,rgba(23,24,22,.94) 44%,rgba(23,24,22,.24)),url(assets/ct-1194.webp) right 29% / 54% auto no-repeat; }
+.arrival .visit-info { max-width: 470px; }
+.arrival .intro,.arrival address p,.arrival .contact-row span { color: #e9e6df; }
+.arrival .contact-row strong { color: white; }
+.arrival .detail-link { color: var(--orange); margin-right: 20px; }
+.arrival address,.arrival .contact-row { border-color: #777873; }
+@media(max-width:700px) {
+  .arrival { padding-bottom: 210px; }
+  .arrival::before { background: linear-gradient(to bottom,var(--ink) 45%,transparent 78%,var(--ink)),url(assets/ct-1194.webp) center bottom 12% / 100% auto no-repeat; }
+}
